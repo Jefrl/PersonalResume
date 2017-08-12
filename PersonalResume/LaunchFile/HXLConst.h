@@ -25,7 +25,24 @@ UIKIT_EXTERN CGFloat const SevenPF;
 UIKIT_EXTERN CGFloat const twelvePF;
 UIKIT_EXTERN CGFloat const spaceFive;
 UIKIT_EXTERN CGFloat const spaceTen;
+UIKIT_EXTERN CGFloat const spaceFifteen;
+UIKIT_EXTERN CGFloat const spaceTwenty;
+UIKIT_EXTERN CGFloat const spaceTwentyF;
+UIKIT_EXTERN CGFloat const spaceThirty;
+UIKIT_EXTERN CGFloat const spaceThirtyF;
+UIKIT_EXTERN CGFloat const spaceForty;
 
+typedef NS_ENUM(NSInteger, ButtonType)
+{
+    ButtonTypeIntroduction = 0,
+    ButtonTypeSkill,
+    ButtonTypeExperience,
+    ButtonTypeAssessment,
+    ButtonTypeContact
+};
+
+// tabBar被选中的通知名字
+UIKIT_EXTERN NSString * const HXLTabBarDidSelectNotification;
 
 /*
 typedef enum {
@@ -77,8 +94,7 @@ UIKIT_EXTERN NSString *const recommentTagReuseID;
 UIKIT_EXTERN CGFloat scrollValue;
 
 
-// tabBar被选中的通知名字
-UIKIT_EXTERN NSString * const HXLTabBarDidSelectNotification;
+
 
 // 网络加载自定义每次加载条数
 UIKIT_EXTERN NSInteger const loadCount;

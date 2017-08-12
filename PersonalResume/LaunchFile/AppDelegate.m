@@ -18,7 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window = [[UIWindow alloc] initWithFrame:SCREEN_BOUNDS];
+    self.window = [[UIWindow alloc] initWithFrame:HXL_SCREEN_BOUNDS];
+    self.window.rootViewController = [[HXLTabBarController alloc] init];
+    [self.window makeKeyAndVisible];
+    self.window.backgroundColor = RED_COLOR;
     
     return YES;
 }

@@ -21,10 +21,19 @@ NSString *const versionKey = @"CFBundleShortVersionString";
 //=================================================================
 // 公共 URL
 NSString * const publicUrl = @"http://api.budejie.com/api/api_open.php";
-CGFloat const SevenPF =  7.5;
-CGFloat const twelvePF = 12.5;
+CGFloat const spaceSPF =  7.5;
+CGFloat const spaceTPF = 12.5;
 CGFloat const spaceFive = 5;
 CGFloat const spaceTen = 10;
+CGFloat const spaceFifteen = 15;
+CGFloat const spaceTwenty = 20;
+CGFloat const spaceTwentyF = 25;
+CGFloat const spaceThirty = 30;
+CGFloat const spaceThirtyF = 35;
+CGFloat const spaceForty = 40;
+
+// tabBar被选中的通知名字
+NSString * const HXLTabBarDidSelectNotification = @"HXLTabBarDidSelectNotification";
 
 /*
 // 基类的容器控件上, 中的高度, 竖直, 水平方向的间隙值
@@ -64,8 +73,7 @@ NSString *const recommentTagReuseID = @"recommentTagCell";
 // 个人详情页面 tableView 下滚的调整距离
 CGFloat scrollValue = 240+150;
 
-// tabBar被选中的通知名字
-NSString * const HXLTabBarDidSelectNotification = @"HXLTabBarDidSelectNotification";
+
 
 // 网络加载自定义每次加载条数
 NSInteger const loadCount = 10;

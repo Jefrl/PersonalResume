@@ -7,7 +7,8 @@
 //
 
 #import "HXLNavigationController.h"
-#import "HXLFollowFriendTrendsVC.h"
+#import "UIBarButtonItem+HXLBarBtnItem.h"
+// #import "HXLFollowFriendTrendsVC.h"
 
 @interface HXLNavigationController () <UIGestureRecognizerDelegate>
 /** backgroundImage */
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     
     // 导航栏 title 字体风格设置
-    [self setTitleTextAttributesOfSize:FONT_17 foregroundColor:[UIColor whiteColor]];
+    [self setTitleTextAttributesOfSize:FONT_17 foregroundColor:BLACK_COLOR];
     // 设置全屏侧滑
     [self setupFullscreenBack];
 }
@@ -42,7 +43,7 @@
     
     NSMutableDictionary *dictM_titleText = [NSMutableDictionary dictionary];
     dictM_titleText[NSFontAttributeName] = FONT_17;
-    dictM_titleText[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    dictM_titleText[NSForegroundColorAttributeName] = foregroundColor;
     // 老方法已废除
     UINavigationBar *navgationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:
     @[[self class]]];
@@ -102,7 +103,7 @@
         UIImage *NormalImage = [UIImage imageNamed:@"navigationButtonReturn"];
         UIImage *selectedImage = [UIImage imageNamed:@"navigationButtonReturnClick"];
         
-        UIBarButtonItem *leftBarButtonItem = [UIBarButtonItem barButtonItemImage:NormalImage selectedImage:selectedImage title:@"返回" titltColor:GRAY_COLOR titleSelectedColor:WHITE_COLOR fontSize:FONT_15 addTarget:self action:@selector(backItemClick:) contentEdgeInsets:UIEdgeInsetsMake(0, -2 * essenceMargin_y, 0, 0) titleEdgeInsets:UIEdgeInsetsMake(0, DIY, 0, 0) forControlEvents:UIControlEventTouchUpInside forcontrolState:UIControlStateHighlighted];
+        UIBarButtonItem *leftBarButtonItem = [UIBarButtonItem barButtonItemImage:NormalImage selectedImage:selectedImage title:@"返回" titltColor:GRAY_COLOR titleSelectedColor:WHITE_COLOR fontSize:FONT_15 addTarget:self action:@selector(backItemClick:) contentEdgeInsets:UIEdgeInsetsMake(0, -2 * spaceTen, 0, 0) titleEdgeInsets:UIEdgeInsetsMake(0, spaceFive, 0, 0) forControlEvents:UIControlEventTouchUpInside forcontrolState:UIControlStateHighlighted];
 
         viewController.navigationItem.leftBarButtonItem = leftBarButtonItem;
     }
