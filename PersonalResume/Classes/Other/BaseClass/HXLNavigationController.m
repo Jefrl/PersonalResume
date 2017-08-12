@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     // 导航栏 title 字体风格设置
-    [self setTitleTextAttributesOfSize:FONT_17 foregroundColor:BLACK_COLOR];
+    [self setTitleTextAttributesOfSize:FONT_17 foregroundColor:WHITE_COLOR];
     // 设置全屏侧滑
     [self setupFullscreenBack];
 }

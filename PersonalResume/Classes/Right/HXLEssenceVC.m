@@ -20,4 +20,9 @@
     self.view.backgroundColor = BLUE_COLOR;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 @end

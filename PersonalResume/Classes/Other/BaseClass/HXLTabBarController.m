@@ -11,6 +11,8 @@
 #import "HXLMusicTVC.h"
 #import "HXLPersonalResumeVC.h"
 #import "HXLEssenceVC.h"
+#import "PersonalResume-Swift.h"
+
 
 #import "HXLTabBar.h"
 
@@ -57,7 +59,8 @@
 // 添加所有子控制器
 - (void)setupAllChildVC {
     // 听, 简历, 笑
-    HXLMusicTVC *musicTVC = [[HXLMusicTVC alloc] init];
+    QQMusicTVC *musicTVC = [[QQMusicTVC alloc] init];
+    
     HXLEssenceVC *essenceVC = [[HXLEssenceVC alloc] init];
     //    HXLPersonalResumeVC *PResumeVC = [[HXLPersonalResumeVC alloc] init];
     
