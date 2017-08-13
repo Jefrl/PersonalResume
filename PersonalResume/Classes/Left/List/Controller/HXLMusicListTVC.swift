@@ -30,6 +30,7 @@ class HXLMusicListTVC: UITableViewController {
         super.viewDidLoad()
         
         setUpInit()
+        
     }
     
 }
@@ -98,6 +99,11 @@ extension HXLMusicListTVC {
         let DetailSB = UIStoryboard(name: "QQDetailVC", bundle: nil)
         let DetailVC = DetailSB.instantiateInitialViewController()!
         navigationController?.pushViewController(DetailVC, animated: true)
+    }
+    
+    func test() -> () { // 测试混编, 忽略我
+        let p = HXLPersonalResumeVC()
+        _ = p.name
     }
     
 }

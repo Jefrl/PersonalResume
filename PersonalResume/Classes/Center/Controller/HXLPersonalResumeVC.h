@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HXLPersonalResumeVC : UIViewController
+/** name */
+@property (nonatomic, readwrite, strong) NSString *name;
 
 @end

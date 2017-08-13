@@ -41,8 +41,27 @@ typedef NS_ENUM(NSInteger, ButtonType)
     ButtonTypeContact
 };
 
+// 简历文件名
+UIKIT_EXTERN NSString *const hxlIntroduction;
+UIKIT_EXTERN NSString *const hxlSkill;
+UIKIT_EXTERN NSString *const hxlExperience;
+UIKIT_EXTERN NSString *const hxlAssessment;
+
+// 简历的重用标识
+UIKIT_EXTERN NSString * const introReuseID;
+UIKIT_EXTERN NSString * const skillReuseID;
+UIKIT_EXTERN NSString * const experienceReuseID;
+UIKIT_EXTERN NSString * const assessmentReuseID;
+
+// 简历圆点图名称
+UIKIT_EXTERN NSString * const currentDot;
+UIKIT_EXTERN NSString * const otherDot;
+
 // tabBar被选中的通知名字
 UIKIT_EXTERN NSString * const HXLTabBarDidSelectNotification;
+
+// 启动 APP 发的通知
+UIKIT_EXTERN NSString * const LaunchingAPPNotification;
 
 /*
 typedef enum {

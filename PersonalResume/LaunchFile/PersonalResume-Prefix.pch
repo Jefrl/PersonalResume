@@ -51,10 +51,11 @@
 #define WHITE_COLOR  [UIColor whiteColor]
 #define GRAY_COLOR   [UIColor grayColor]
 #define BROWN_COLOR  [UIColor brownColor]
+// 浅灰色
 #define LIGHTGRAY_COLOR [UIColor lightGrayColor]
-// 整体通用灰色
+// 整体底部衬托灰色
 #define GRAY_PUBLIC_COLOR RGBColor(233, 233, 233, 1)
-// 整体底部灰色
+// 整体呈现灰色
 #define GRAY_WHITE_COLOR RGBColor(240, 240, 240, 1)
 // RGB 指定颜色与不透明度 (不透明: 1 透明: 0)
 #define RGBColor(r, g, b, a) [UIColor colorWithRed: r / 255.0 green: g / 255.0 blue: b / 255.0 alpha: a]

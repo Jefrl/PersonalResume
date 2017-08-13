@@ -19,6 +19,7 @@
 
 @implementation HXLTabBar
 
+#pragma mark ===================== 初始化 =====================
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         // 创建发布按钮
@@ -27,14 +28,21 @@
         [releaseBtn setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [releaseBtn setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
         [releaseBtn addTarget:self action:@selector(releaseBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-//        releaseBtn.size = releaseBtn.currentImage.size;
         [self addSubview:releaseBtn];
         self.releaseBtn = releaseBtn;
+        
+        // 注册观察者
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(releaseBtnClick:) name:LaunchingAPPNotification object:nil];
     }
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+// 布局
 - (void)layoutSubviews {
     [super layoutSubviews];
     
@@ -73,6 +81,7 @@
     
 }
 
+#pragma mark ===================== 响应方法区域 =====================
 // 发布按钮点击
 - (void)releaseBtnClick:(UIButton *)btn {
     // 获取主窗口来 modal 控制器

@@ -32,8 +32,27 @@ CGFloat const spaceThirty = 30;
 CGFloat const spaceThirtyF = 35;
 CGFloat const spaceForty = 40;
 
+// 简历文件名
+NSString *const hxlIntroduction = @"hxlIntroduction.lrc";
+NSString *const hxlSkill = @"hxlSkill.lrc";
+NSString *const hxlExperience = @"hxlExperience.lrc";
+NSString *const hxlAssessment = @"hxlAssessment.lrc";
+
+// 简历的重用标识
+NSString * const introReuseID = @"introReuseID";
+NSString * const skillReuseID = @"skillReuseID";
+NSString * const experienceReuseID = @"experienceReuseID";
+NSString * const assessmentReuseID = @"assessmentReuseID";
+
+// 简历圆点图名称
+NSString * const currentDot = @"current";
+NSString * const otherDot = @"other";
+
+
 // tabBar被选中的通知名字
 NSString * const HXLTabBarDidSelectNotification = @"HXLTabBarDidSelectNotification";
+// 启动 APP 发的通知
+NSString * const LaunchingAPPNotification = @"LaunchingAPPNotification";
 
 /*
 // 基类的容器控件上, 中的高度, 竖直, 水平方向的间隙值

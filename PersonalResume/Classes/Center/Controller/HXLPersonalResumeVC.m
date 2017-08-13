@@ -71,15 +71,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.navigationController.navigationBarHidden = YES;
     // 所有按钮的搭建
     [self setupAllButton];
-    
     // 标题的创建
     [self setupSlogan];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    self.navigationController.navigationBarHidden = NO;
+    for (UIButton *btn in self.fiveBtnArray) {
+        [btn removeFromSuperview];
+    }
     [self.fiveBtnArray removeAllObjects];
     self.fiveBtnArray = nil;
 }
@@ -214,9 +218,11 @@
 // 点击简历按钮跳转的方法
 - (void)resumeBtnPushVC:(UIViewController *)vc
 {
+    HXL_WEAKSELF;
     [self btnViewDisappearWithPop:^{
-        [self.navigationController pushViewController:vc animated:YES];
-        self.navigationController.navigationBar.hidden = NO;
+        HXL_STRONGSELF;
+        [strongSelf.navigationController pushViewController:vc animated:YES];
+        strongSelf.navigationController.navigationBarHidden = NO;
     }];
 }
 
