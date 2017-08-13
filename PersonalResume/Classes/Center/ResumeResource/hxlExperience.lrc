@@ -1,19 +1,0 @@
-### 工作经历
-**项目简介：蜜意**  
- 
- * 蜜意是一款是专为年轻潮流，时尚女生服务的社区，是一款秀出美丽装扮，智能推荐海量同款，时尚达人给你搭配建议的软件；国内首家专注于解决女生穿搭的应用APP；  
-   
-**项目链接:** &nbsp;[https://itunes.apple.com/cn/app/mi-yi-shi-shang-nu-sheng-chuan/id1050037747?mt=8](https://itunes.apple.com/cn/app/mi-yi-shi-shang-nu-sheng-chuan/id1050037747?mt=8)  
-**项目时间:** 2016 - 04 至 2017 - 03   
-**项目职责：** 
- * 主要负责企业界面与我的界面。 * 主要技术点：  * 1，框架思想: MVC   * 2，用UIScrollView 实现首页图片的无限轮播 ;  * 3，用UITableView的循环利用机制展现数据, 同时自定义上拉刷新和下拉刷新;  * 4，根据用户的当前网络状态决定数据的缓存;  * 5，集成第三方分享功能,可以让更多用户吧喜爱的商品分享出去;  * 6，第三方授权登录逻辑设计与代码实现;  * 7，严格遵循MVC设计模式开发，使用代理、通知传递数据模型和消息，降低各个模块的耦合度;  * 8，常用的三方框架有: pop, SDWebImage, FLAnimatedImage,  AFN, SVProgressHUD, DACircularProgress, NJKWebViewProgress 等;</br>**项目简介：石猫**
-
-**项目链接:** &nbsp;[https://itunes.apple.com/cn/app/shi-mao-shi-cai-sou-suo-zhuan/id780515139?mt=8](https://itunes.apple.com/cn/app/shi-mao-shi-cai-sou-suo-zhuan/id780515139?mt=8)  
-**项目时间:** 2016 - 04 至 2017 - 03  
-**项目概述:** 
- 
- * 石材行业的社交电商平台，全方面整合行业资源，打通“采购、加工、销售、物流、设计、施工” 各环节需求，集功能性与营销性为一体的 O2O 平台，把石材产业多角度、透明化的展示在用户面前，开启 了“互联网+石材”的全新商业模式  
-
-**项目职责：** 
- * 主要负责企业界面与我的界面。 * 主要技术点：  * 1，框架思想: MVC   * 2，用UIScrollView 实现首页图片的无限轮播 ;  * 3，用UITableView的循环利用机制展现数据, 同时自定义上拉刷新和下拉刷新;
-  * 4，使用UISearchBar实现热门搜索功能;  * 5，严格遵循MVC设计模式开发，使用代理、通知传递数据模型和消息，降低各个模块的耦合度;  * 6，常用的三方框架有: SDWebImage,  AFN, SVProgressHUD, NJKWebViewProgress, MJRefresh等;

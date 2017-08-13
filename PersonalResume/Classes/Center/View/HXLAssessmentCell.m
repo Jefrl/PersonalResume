@@ -21,8 +21,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    
+    NSLog(@"%@", NSStringFromCGRect(self.frame));
 }
+
 
 - (void)setItem:(HXLSkillItem *)item
 {

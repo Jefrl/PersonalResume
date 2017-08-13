@@ -51,7 +51,7 @@ extension HXLMusicListTVC {
     /// tableView 界面的初始化
     func setTabView() {
         
-        tableView.rowHeight = 60
+        tableView.rowHeight = 80
         tableView.separatorStyle = .none
         
         let image = UIImage(named: "QQListBack.jpg")

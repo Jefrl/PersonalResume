@@ -27,7 +27,7 @@
         NSArray *array = [HXLContentTool getResumeArrayWithFile:hxlAssessment];
         
         for (NSString *skillStr in array) {
-            NSLog(@"__%@__", skillStr);
+//            NSLog(@"__%@__", skillStr);
             if ([skillStr isEqualToString: @""]) continue;
             [arrayM addObject:skillStr];
         }
@@ -41,7 +41,7 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ HXLAssessmentCell class]) bundle:nil] forCellReuseIdentifier:assessmentReuseID];
     
-    self.tableView.estimatedRowHeight = 22;
+    self.tableView.estimatedRowHeight = 10;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.backgroundColor = GRAY_WHITE_COLOR;
     self.tableView.tableFooterView = [UIView new];
