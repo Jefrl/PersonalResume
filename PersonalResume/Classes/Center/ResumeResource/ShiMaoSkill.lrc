@@ -1,3 +1,6 @@
-框架思想: MVC 用UIScrollView 实现首页图片的无限轮播  用UITableView的循环利用机制展现数据, 同时自定义上拉刷新和下拉刷新 
-
-使用UISearchBar实现热门搜索功能 严格遵循MVC设计模式开发，使用代理、通知传递数据模型和消息，降低各个模块的耦合度 常用的三方框架有: SDWebImage,  AFN, SVProgressHUD, NJKWebViewProgress, MJRefresh等 
+框架思想: MVC
+用UIScrollView 实现首页图片的无限轮播 ;
+用UITableView的循环利用机制展现数据, 同时自定义上拉刷新和下拉刷新;
+使用UISearchBar实现热门搜索功能;
+严格遵循MVC设计模式开发，使用代理、通知传递数据模型和消息，降低各个模块的耦合度;
+常用的三方框架有: SDWebImage, AFN, SVProgressHUD, NJKWebViewProgress, MJRefresh等;

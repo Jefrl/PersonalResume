@@ -1,6 +1,6 @@
 //
 //  HXLCommentViewController.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/7/7.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -15,6 +15,7 @@
 
 #import "HXLEssenceItem.h"
 #import "HXLEssenceCommentItem.h"
+#import "UIBarButtonItem+HXLBarBtnItem.h"
 
 
 #import "HXLSessionManager.h"
@@ -93,7 +94,7 @@
 // 用代码实现 cell 的分割线起始位置 iOS8开始有变化
 -(void)viewDidLayoutSubviews
 {
-    UIEdgeInsets separatorInset = UIEdgeInsetsMake(0, essenceMargin_x, 0, 0);
+    UIEdgeInsets separatorInset = UIEdgeInsetsMake(0, spaceTen, 0, 0);
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:separatorInset];
     }
@@ -128,19 +129,19 @@
 - (void)setupBase
 {
     // 右侧导航 item
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemImage:[UIImage imageNamed:@"comment_nav_item_share_icon"] selectedImage:[UIImage imageNamed:@"comment_nav_item_share_icon_click"] addTarget:self action:@selector(rightBarButtonItemClick:) contentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -DIY) forControlEvents:UIControlEventTouchUpInside forcontrolState:UIControlStateHighlighted];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemImage:[UIImage imageNamed:@"comment_nav_item_share_icon"] selectedImage:[UIImage imageNamed:@"comment_nav_item_share_icon_click"] addTarget:self action:@selector(rightBarButtonItemClick:) contentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -spaceFive) forControlEvents:UIControlEventTouchUpInside forcontrolState:UIControlStateHighlighted];
     
     self.title = @"评论";
     self.tableView.estimatedRowHeight = 44;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     // 系统滚动内边距调整
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tableView.contentInset = UIEdgeInsetsMake(NAVIGATIONBAR_HEIGHT, 0, TABBAR_HEIGHT, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(navigationBarHgiht, 0, tabBarHeight, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     // 去掉 多余 cell 中的分割线
     self.tableView.tableFooterView = [[UIView alloc] init];
     // 注册 cell;
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HXLCommentTableViewCell class]) bundle:nil] forCellReuseIdentifier:cmt_reuseID];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HXLCommentTableViewCell class]) bundle:nil] forCellReuseIdentifier:cmtReuseID];
 }
 
 // 搭建 tableView 的头部视图
@@ -153,10 +154,10 @@
     UIView *headerView = [[UIView alloc] init];
     headerView.backgroundColor = WHITE_COLOR;
     [headerView addSubview:cell];
-    headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH,  cell.height + essenceMargin_y);
+    headerView.frame = CGRectMake(0, 0, HXL_SCREEN_WIDTH,  cell.height + spaceTen);
     // 为了方便调整间距, 我们一般选择再包裹一层 View;
     UIView *header = [[UIView alloc] init];
-    header.height = headerView.height + essenceMargin_y;
+    header.height = headerView.height + spaceTen;
     header.backgroundColor = GRAY_PUBLIC_COLOR;
     [header addSubview:headerView];
     
@@ -175,7 +176,7 @@
 {
     // 更改约束;
     CGRect keyboardFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat changeValue = SCREEN_HEIGHT - keyboardFrame.origin.y;
+    CGFloat changeValue = HXL_SCREEN_HEIGHT - keyboardFrame.origin.y;
     self.bottomSpace.constant = changeValue;
     // 执行约束变化
     self.duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
@@ -187,7 +188,7 @@
 
 - (void)keyboardWillShow:(NSNotification *)note
 {
-    [self setupCoverView:CGRectMake(0, 0, SCREEN_WIDTH, self.bottomView.y)];
+    [self setupCoverView:CGRectMake(0, 0, HXL_SCREEN_WIDTH, self.bottomView.y)];
 }
 
 #pragma mark - 设置蒙板跟弹窗口区域
@@ -251,7 +252,7 @@
     parameters[@"per"] = @(loadCount);
     parameters[@"hot"] = @1;
     
-    [self.sessionManager request:RequestTypeGet URLString:HXLPUBLIC_URL parameters:parameters success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    [self.sessionManager request:RequestTypeGet URLString:publicUrl parameters:parameters success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         WriteToPlist(responseObject, @"Comment", @(self.collectionCellType));
         
         if (![responseObject isKindOfClass:[NSDictionary class]]) { // 如果没有数据;
@@ -297,7 +298,7 @@
     // 刷新下一页, 参数加1, 但不赋值, 刷新不成功也不会更改 self.page 的真实值
     parameters[@"page"] = @(self.page + 1);
     
-    [self.sessionManager request:RequestTypeGet URLString:HXLPUBLIC_URL parameters:parameters success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    [self.sessionManager request:RequestTypeGet URLString:publicUrl parameters:parameters success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         WriteToPlist(responseObject, @"Comment", @(self.collectionCellType));
         
         if (![responseObject isKindOfClass:[NSDictionary class]]) { // 如果没有数据;
@@ -388,7 +389,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     HXLCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cmt_reuseID forIndexPath:indexPath];
+     HXLCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cmtReuseID forIndexPath:indexPath];
     cell.commentItem = [self itemByIndexPath:indexPath];
 
     return cell;
@@ -404,8 +405,8 @@
     
     if (1 == section) {
         // 很多时候对于复杂的需求包裹一层, 是很管用的
-        headerFooterView.header.y = essenceMargin_y;
-        headerFooterView.height = heightForHeaderInSection + essenceMargin_y;
+        headerFooterView.header.y = spaceTen;
+        headerFooterView.height = heightForHeaderInSection + spaceTen;
     }
     
     return headerFooterView;
@@ -413,7 +414,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 0 == section ? heightForHeaderInSection : (heightForHeaderInSection + essenceMargin_y);
+    return 0 == section ? heightForHeaderInSection : (heightForHeaderInSection + spaceTen);
     
 }
 

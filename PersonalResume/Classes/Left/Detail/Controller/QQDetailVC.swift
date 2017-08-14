@@ -1,6 +1,6 @@
 //
 //  QQDetailVC.swift
-//  QQMusicDemo
+//  PersonalResume
 //
 //  Created by Jefrl on 17/5/19.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -55,8 +55,7 @@ class QQDetailVC: UIViewController, UIScrollViewDelegate {
 
 // MARK:- 初始设置
 extension QQDetailVC {
-    // 这个方法里面, 存放的都是单次操作的, 比如说添加控件, 设置控件状态
-    // 注意: 不要把设置frame的方法放在这里, 因为这里获取的是xib原始的尺寸
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

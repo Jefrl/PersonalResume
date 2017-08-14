@@ -1,6 +1,6 @@
 //
 //  HXLRecommentTagTableViewCell.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/7/20.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "HXLRecommentTagTableViewCell.h"
 #import "HXLRecommentTagItem.h"
+#import "NSString+HXL.h"
 
 #import "UIImageView+HXLSDWeb.h"
 

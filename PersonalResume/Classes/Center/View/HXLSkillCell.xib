@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="116.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current" translatesAutoresizingMaskIntoConstraints="NO" id="igx-wN-YqB">
@@ -27,7 +27,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rW-Td-S0w">
-                        <rect key="frame" x="25" y="5" width="287" height="91"/>
+                        <rect key="frame" x="25" y="5" width="287" height="81.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                 <constraints>
                     <constraint firstItem="4rW-Td-S0w" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BZB-Oh-38P"/>
                     <constraint firstItem="4rW-Td-S0w" firstAttribute="leading" secondItem="igx-wN-YqB" secondAttribute="trailing" constant="5" id="EZ7-ae-5BC"/>
-                    <constraint firstAttribute="bottom" secondItem="4rW-Td-S0w" secondAttribute="bottom" constant="20" id="Emx-zT-lAD"/>
+                    <constraint firstAttribute="bottom" secondItem="4rW-Td-S0w" secondAttribute="bottom" constant="30" id="Emx-zT-lAD"/>
                     <constraint firstItem="igx-wN-YqB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ZMa-Ii-5KK"/>
                     <constraint firstAttribute="trailingMargin" secondItem="4rW-Td-S0w" secondAttribute="trailing" id="g1j-wc-XBq"/>
                     <constraint firstItem="igx-wN-YqB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ggO-xf-nYf"/>

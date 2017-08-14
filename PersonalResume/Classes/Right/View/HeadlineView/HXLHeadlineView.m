@@ -1,12 +1,14 @@
 //
 //  HXLHeadlineView.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 17/3/10.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
 //
 
 #import "HXLHeadlineView.h"
+#import "HXLHeadlineBtn.h"
+
 
 @interface HXLHeadlineView ()<UIScrollViewDelegate>
 /** titleCount 标题个数 */
@@ -49,18 +51,18 @@
         UIViewController *childVC = headlineVC_arr[i];
         CGRect titleBounds = [childVC.title boundingRectWithSize:CGSizeMake(MAXFLOAT, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:titleFont} context:nil];
         // 标题宽度
-        _titleWidth = titleBounds.size.width + Margin;
+        _titleWidth = titleBounds.size.width + spaceTwenty;
         [self.titleWidths addObject:[NSNumber numberWithFloat:_titleWidth]];
         
         _totalWidth += _titleWidth;
         if (i < _titleCount -1) continue;
         // 标题间隙
-        if (_totalWidth > SCREEN_WIDTH) {
-            _titleMargin = Margin;
+        if (_totalWidth > HXL_SCREEN_WIDTH) {
+            _titleMargin = spaceTwenty;
         } else {
             
-            _titleMargin = (SCREEN_WIDTH - _totalWidth) / (_titleCount + 1);
-            _titleMargin = _titleMargin < Margin? Margin: _titleMargin;
+            _titleMargin = (HXL_SCREEN_WIDTH - _totalWidth) / (_titleCount + 1);
+            _titleMargin = _titleMargin < spaceTwenty? spaceTwenty: _titleMargin;
         }
     }
 }
@@ -114,7 +116,7 @@
 {
     [super layoutSubviews];
     
-    self.frame = CGRectMake(0, NAVIGATIONBAR_HEIGHT, SCREEN_WIDTH, HeadlineView_height);
+    self.frame = CGRectMake(0, navigationBarHgiht, HXL_SCREEN_WIDTH, HeadlineView_height);
     
     // headlineBtn.frame 设置
     CGFloat tempWidth = 0;
@@ -153,7 +155,7 @@
         // 下划线动画
         _underline.width = headlineBtn.width;
         _underline.centerX = headlineBtn.centerX;
-        _currentOffset = headlineBtn.centerX - SCREEN_WIDTH * 0.5;
+        _currentOffset = headlineBtn.centerX - HXL_SCREEN_WIDTH * 0.5;
         // 记录上一个索引, 记录当前索引
         _lastBtnIndex = _selectedBtnIndex;
         _selectedBtnIndex = headlineBtn.tag;

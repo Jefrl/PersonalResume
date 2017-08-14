@@ -1,6 +1,6 @@
 //
 //  HXLShowBigPictureViewController.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/6/26.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -37,7 +37,7 @@
         [saveBtn setImage:[UIImage imageNamed:@"big_image_save_click"] forState:UIControlStateHighlighted];
         [saveBtn setTitle:@"保存" forState:UIControlStateNormal];
         [saveBtn sizeToFit];
-        saveBtn.originX = essenceMargin_x;
+        saveBtn.originX = spaceTen;
         saveBtn.centerY = self.bottomV.height * 0.5;
         [saveBtn addTarget:self action:@selector(saveBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -72,7 +72,7 @@
         _bottomV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"see-big-picture-background"]];
         _bottomV.userInteractionEnabled = YES;
         
-        _bottomV.frame = CGRectMake(0, SCREEN_HEIGHT - _bottomV.image.size.height, SCREEN_WIDTH, _bottomV.image.size.height);
+        _bottomV.frame = CGRectMake(0, HXL_SCREEN_HEIGHT - _bottomV.image.size.height, HXL_SCREEN_WIDTH, _bottomV.image.size.height);
     }
     
     return _bottomV;
@@ -106,9 +106,9 @@
         [_imageView sd_setImageWithURL:[NSURL URLWithString:_punCellItem.small_image] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
         }];
         
-        CGFloat width = SCREEN_WIDTH;
+        CGFloat width = HXL_SCREEN_WIDTH;
         CGFloat height = _punCellItem.height * width / _punCellItem.width;
-        if (height <= SCREEN_HEIGHT) {
+        if (height <= HXL_SCREEN_HEIGHT) {
             _imageView.size = CGSizeMake(width, height);
             _imageView.centerX = self.view.centerX;
             _imageView.centerY = self.view.centerY;

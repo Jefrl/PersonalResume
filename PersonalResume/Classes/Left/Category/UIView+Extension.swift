@@ -1,6 +1,6 @@
 //
 //  UIView+Extension.swift
-//  QQMusicDemo
+//  CustomClass
 //
 //  Created by Jefrl on 17/5/18.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

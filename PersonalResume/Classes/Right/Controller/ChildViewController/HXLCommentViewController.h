@@ -1,6 +1,6 @@
 //
 //  HXLCommentViewController.h
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/7/7.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

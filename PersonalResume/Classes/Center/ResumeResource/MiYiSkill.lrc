@@ -1,1 +1,8 @@
-框架思想: MVC 用UIScrollView 实现首页图片的无限轮播 ;用UITableView的循环利用机制展现数据, 同时自定义上拉刷新和下拉刷新;根据用户的当前网络状态决定数据的缓存;集成第三方分享功能,可以让更多用户吧喜爱的商品分享出去;第三方授权登录逻辑设计与代码实现;严格遵循MVC设计模式开发，使用代理、通知传递数据模型和消息，降低各个模块的耦合度;常用的三方框架有: pop, SDWebImage, FLAnimatedImage,  AFN, SVProgressHUD, DACircularProgress, NJKWebViewProgress 等;
+框架思想: MVC
+用UIScrollView 实现首页图片的无限轮播
+用UITableView的循环利用机制展现数据, 同时自定义上拉刷新和下拉刷新;
+根据用户的当前网络状态决定数据的缓存;
+集成第三方分享功能,可以让更多用户吧喜爱的商品分享出去;
+第三方授权登录逻辑设计与代码实现;
+严格遵循MVC设计模式开发，使用代理、通知传递数据模型和消息，降低各个模块的耦合度;
+常用的三方框架有: pop, SDWebImage, FLAnimatedImage, AFN, SVProgressHUD, DACircularProgress, NJKWebViewProgress 等;

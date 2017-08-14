@@ -3,48 +3,78 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>date</key>
-		<string>项目时间: 2016 - 04 至 2017 - 03</string>
-		<key>duty</key>
-		<string>项目职责：</string>
-		<key>dutyContent</key>
-		<string>主要负责首页界面的实现</string>
 		<key>header</key>
 		<string>项目简介：蜜意</string>
-		<key>link</key>
-		<string>项目链接: </string>
-		<key>linkContent</key>
-		<string>https://itunes.apple.com/cn/app/mi-yi-shi-shang-nu-sheng-chuan/id1050037747?mt=8</string>
-		<key>overView</key>
-		<string>项目概述:</string>
-		<key>overViewContent</key>
-		<string>蜜意是一款是专为年轻潮流，时尚女生服务的社区，是一款秀出美丽装扮，智能推荐海量同款，时尚达人给你搭配建议的软件；国内首家专注于解决女生穿搭的应用APP</string>
-		<key>skill</key>
-		<string>主要技术点</string>
-		<key>skillContent</key>
-		<string>MiYiSkill.lrc</string>
+		<key>projects</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>项目概述</string>
+				<key>titleContent</key>
+				<string>蜜意是一款是专为年轻潮流，时尚女生服务的社区，是一款秀出美丽装扮，智能推荐海量同款，时尚达人给你搭配建议的软件；国内首家专注于解决女生穿搭的应用APP</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>项目链接</string>
+				<key>titleContent</key>
+				<string>https://itunes.apple.com/cn/app/mi-yi-shi-shang-nu-sheng-chuan/id1050037747?mt=8</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>项目时间</string>
+				<key>titleContent</key>
+				<string>2016 - 04 至 2017 - 03</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>项目职责</string>
+				<key>titleContent</key>
+				<string>主要负责首页界面的实现</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>主要技术点</string>
+				<key>titleContent</key>
+				<string>...👉 全文 👉</string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
-		<key>date</key>
-		<string>项目时间: 2016 - 04 至 2017 - 03</string>
-		<key>duty</key>
-		<string>项目职责：</string>
-		<key>dutyContent</key>
-		<string>主要负责企业界面与我的界面</string>
 		<key>header</key>
 		<string>项目简介：石猫</string>
-		<key>link</key>
-		<string>项目链接: </string>
-		<key>linkContent</key>
-		<string>https://itunes.apple.com/cn/app/shi-mao-shi-cai-sou-suo-zhuan/id780515139?mt=8</string>
-		<key>overView</key>
-		<string>项目概述:</string>
-		<key>overViewContent</key>
-		<string>石材行业的社交电商平台，全方面整合行业资源，打通“采购、加工、销售、物流、设计、施工” 各环节需求，集功能性与营销性为一体的 O2O 平台，把石材产业多角度、透明化的展示在用户面前，开启 了“互联网+石材”的全新商业模式</string>
-		<key>skill</key>
-		<string>主要技术点</string>
-		<key>skillContent</key>
-		<string>ShiMaoSkill.lrc</string>
+		<key>projects</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>项目概述</string>
+				<key>titleContent</key>
+				<string>石材行业的社交电商平台，全方面整合行业资源，打通“采购、加工、销售、物流、设计、施工” 各环节需求，集功能性与营销性为一体的 O2O 平台，把石材产业多角度、透明化的展示在用户面前，开启 了“互联网+石材”的全新商业模式</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>项目链接</string>
+				<key>titleContent</key>
+				<string>https://itunes.apple.com/cn/app/shi-mao-shi-cai-sou-suo-zhuan/id780515139?mt=8</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>项目时间</string>
+				<key>titleContent</key>
+				<string>2016 - 04 至 2017 - 03</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>项目职责</string>
+				<key>titleContent</key>
+				<string>主要负责企业界面与我的界面</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>主要技术点</string>
+				<key>titleContent</key>
+				<string>...👉 全文 👉</string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

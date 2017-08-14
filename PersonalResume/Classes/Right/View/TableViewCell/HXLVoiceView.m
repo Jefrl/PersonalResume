@@ -1,6 +1,6 @@
 //
 //  HXLVoiceTableViewCell.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 17/3/13.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -11,10 +11,10 @@
 #import "HXLShowBigPictureViewController.h"
 #import "HXLProgressView.h"
 #import "UIImageView+WebCache.h"
+#import "NSString+HXL.h"
 
 #import <AVKit/AVKit.h>
-//#import <AVFoundation/AVFoundation.h>
-#import "HXLAudioTool.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface HXLVoiceView ()
 /** 占位图片 */
@@ -35,11 +35,9 @@
 /** 音频播放 VC */
 /** audioPlayer */
 @property (nonatomic, readwrite, strong) AVAudioPlayer *audioPlayer;
-//@property (nonatomic, readwrite, strong) AVPlayerViewController *AVPlayerVC;
+@property (nonatomic, readwrite, strong) AVPlayerViewController *AVPlayerVC;
 /** 播放状态的 imageView */
 @property (nonatomic, readwrite, strong) UIImageView *imageView;
-/** AudioTool */
-@property (nonatomic, readwrite, strong) HXLAudioTool *audioTool;
 /** previouBtn */
 @property (nonatomic, readwrite, strong) UIButton *previouBtn;
 /** preImageView */
@@ -49,24 +47,15 @@
 
 @implementation HXLVoiceView
 #pragma mark - 懒加载
-//- (AVPlayerViewController *)AVPlayerVC
-//{
-//    if (!_AVPlayerVC) {
-//        AVPlayerViewController *vc = [[AVPlayerViewController alloc] init];
-//        vc.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:self.punCellItem.voiceuri]];
-//        
-//        _AVPlayerVC = vc;
-//    }
-//    return _AVPlayerVC;
-//}
-
-- (HXLAudioTool *)audioTool
+- (AVPlayerViewController *)AVPlayerVC
 {
-    if (!_audioTool) {
-        HXLAudioTool *tool = [HXLAudioTool shareHXLAudioTool];
-        _audioTool = tool;
+    if (!_AVPlayerVC) {
+        AVPlayerViewController *vc = [[AVPlayerViewController alloc] init];
+        vc.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:self.punCellItem.voiceuri]];
+        
+        _AVPlayerVC = vc;
     }
-    return _audioTool;
+    return _AVPlayerVC;
 }
 
 - (UIImageView *)imageView
@@ -101,58 +90,9 @@
 
 
 #pragma mark - 响应方法区域
-- (IBAction)playBtnClick:(UIButton *)sender {
-    
-    if (self.previouBtn == sender) {
-        sender.selected = !sender.selected;
-        if (sender.selected) { // 现在是选中的播放状态
-            sender.hidden = NO;
-            [self.preImageView startAnimating];
-            self.preImageView.hidden = NO;
-            
-            [self.audioTool playAudio:_punCellItem.voiceuri];
-        
-        } else { // 现在是非选中的暂停状态;
-            sender.hidden = NO;
-            [self.preImageView stopAnimating];
-            self.preImageView.hidden = YES;
-            
-            [self.audioTool pauseAudio];
-        }
-        return;
-#pragma mark - bug bug 如果点击另一个 cell 上的按钮, 如何恢复之前的按钮, 取消之前 imageView(给它单例么), 还是一个个取消掉; 再重新开启对应的; 为什么会有空白选项, cell 的重复利用没有重新加载么??)
-        
-    }
-    
-    // 非同一个按钮时, 恢复上次记录的按钮和 上次 imageView 的动画暂停并移除
-    self.previouBtn.hidden = NO;
-    [self.preImageView stopAnimating];
-    [self.preImageView removeFromSuperview];
-    // 显现并开启本次的控件
-    self.playBtn.hidden = YES;
-    self.imageView.hidden = NO;
-    [self.imageView startAnimating];
-    // 重新记录的按钮和 imageView 并开启动画
-    self.previouBtn = self.playBtn;
-    self.preImageView = self.imageView;
-    
-    HXL_WEAKSELF;
-    [self.audioTool setStartAnimation:^{
-        HXL_STRONGSELF;
-        [strongSelf startAnimation];
-    }];
-    [self.audioTool setStopAnimation:^{
-        HXL_STRONGSELF;
-        [strongSelf stopAnimation];
-    }];
-    
-    
-    [self.audioTool playAudio:_punCellItem.voiceuri];
-}
-
-- (void)imageViewTagGesture:(UITapGestureRecognizer *)sender
+- (IBAction)playBtnClick:(UIButton *)sender
 {
-    [self.audioTool pauseAudio];
+    NSLog(@"");
 }
 
 // 这里简单处理了, 以后优化的

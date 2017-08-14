@@ -1,6 +1,6 @@
 //
 //  HXLShowBigPictureViewController.h
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/6/26.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  HXLPunTableViewCell.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 17/3/13.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -15,6 +15,7 @@
 #import "HXLPictureView.h"
 #import "HXLVideoView.h"
 #import "HXLVoiceView.h"
+#import "UIView+HXL.h"
 
 @interface HXLPunTableViewCell ()
 
@@ -116,10 +117,10 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.contentView.x = DIY;
-    self.contentView.y = DIY;
-    self.contentView.width = self.width - DIY * 2;
-    self.contentView.height = self.height - DIY * 2;
+    self.contentView.x = spaceFive;
+    self.contentView.y = spaceFive;
+    self.contentView.width = self.width - spaceFive * 2;
+    self.contentView.height = self.height - spaceFive * 2;
     // 非 cell 的 Xib 本身上子控件 midView.frame 的设定
     self.pictureView.frame = self.punCellItem.pictureFrame;
     self.videoView.frame = self.punCellItem.pictureFrame;
@@ -129,12 +130,12 @@
 
 - (void)setFrame:(CGRect)frame {
     
-    frame.origin.x = DIY;
-    frame.origin.y += DIY;
+    frame.origin.x = spaceFive;
+    frame.origin.y += spaceFive;
     
-    frame.size.width = SCREEN_WIDTH - DIY * 2;
+    frame.size.width = HXL_SCREEN_WIDTH - spaceFive * 2;
     // 为了花哨, 我故意不乘以 2 了; 所以前面的cell 高度应该, 只增加15;
-    frame.size.height = self.punCellItem.cellHeight - DIY;
+    frame.size.height = self.punCellItem.cellHeight - spaceFive;
     
     [super setFrame:frame];
 }

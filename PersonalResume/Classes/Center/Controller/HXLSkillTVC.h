@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Jefrl. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HXLBaseTVC.h"
 
-@interface HXLSkillTVC : UITableViewController
+@interface HXLSkillTVC : HXLBaseTVC
 
 @end

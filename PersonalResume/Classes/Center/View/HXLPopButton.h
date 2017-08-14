@@ -1,6 +1,6 @@
 //
 //  HXLReleaseButton.h
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 17/3/4.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

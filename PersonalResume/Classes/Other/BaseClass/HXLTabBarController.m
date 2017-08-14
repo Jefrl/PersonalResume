@@ -1,6 +1,6 @@
 //
 //  HXLTabBarController.m
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 17/2/28.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -8,10 +8,11 @@
 
 #import "HXLTabBarController.h"
 #import "HXLNavigationController.h"
-#import "HXLPersonalResumeVC.h"
-#import "HXLEssenceVC.h"
 
-#import "PersonalResume-Swift.h"
+//#import "HXLEssenceVC.h"
+#import "HXLEssenceVC.h"
+#import "HXLPersonalResumeVC.h"
+#import "HXLMusicViewController.h"
 
 #import "HXLTabBar.h"
 
@@ -39,6 +40,7 @@
 
 // 设置 tabBar 字体统一风格
 - (void)setupTabBar {
+    
     self.tabBar.backgroundImage = [UIImage imageNamed:@"tabbar-light"];
     [self SetTitleTextAttributesOfSize:FONT_11 titleTextColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self SetTitleTextAttributesOfSize:FONT_11 titleTextColor:[UIColor redColor] forState:UIControlStateSelected];
@@ -58,14 +60,10 @@
 // 添加所有子控制器
 - (void)setupAllChildVC {
     // 听, 简历, 笑
-    HXLMusicListTVC *musicTVC = [[HXLMusicListTVC alloc] init];
-    
+    HXLMusicViewController *musicVC = [[HXLMusicViewController alloc] init];
     HXLEssenceVC *essenceVC = [[HXLEssenceVC alloc] init];
-    //    HXLPersonalResumeVC *PResumeVC = [[HXLPersonalResumeVC alloc] init];
     
-    //    [self addCustomChildViewController:PResumeVC image:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"tabBar_me_icon"]] selectedImage:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"tabBar_me_click_icon"]] title:@"我"];
-    
-    [self addCustomChildViewController:musicTVC image:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"tabBar_essence_icon"]] selectedImage:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"tabBar_essence_click_icon"]] title:@"听一会"];
+    [self addCustomChildViewController:musicVC image:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"ImageSelectedSmallOff"]] selectedImage:[UIImage imageNamed:@"ImageSelectedSmallOff"] title:@"听一会"];
     
     [self addCustomChildViewController:essenceVC image:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"tabBar_new_icon"]] selectedImage:[UIImage imageRenderingModeAlwaysOriginal:[UIImage imageNamed:@"tabBar_new_click_icon"]] title:@"笑一会"];
 }
@@ -74,21 +72,15 @@
 - (void)addCustomChildViewController:(UIViewController *)childController image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title {
     
     HXLNavigationController *childNavC = [[HXLNavigationController alloc] initWithRootViewController:childController];
-    childController.title = title;
+    
+    childController.navigationItem.title = title;
+    
     childNavC.tabBarItem.image = image;
     childNavC.tabBarItem.selectedImage = selectedImage;
     childNavC.tabBarItem.title = title;
     
     [self addChildViewController:childNavC];
 }
-
-
-
-
-/** tabBar 点击 */
-/** 
- UIImage *imageStayOrigin = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
- */
 
 
 @end

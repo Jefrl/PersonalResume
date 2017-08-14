@@ -57,8 +57,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 开始动画取消交互
-    self.view.userInteractionEnabled = NO;
+//    // 开始动画取消交互
+//    self.view.userInteractionEnabled = NO;
     
     // view 的背景图设置
     UIImageView *bg_imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shareBottomBackground"]];
@@ -116,8 +116,8 @@
     anim.beginTime = CACurrentMediaTime() + [self.timeArray[5] doubleValue];
     
     [anim setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-        // 开启交互;
-        self.view.userInteractionEnabled = YES;
+//        // 开启交互;
+//        self.view.userInteractionEnabled = YES;
     }];
     
     [appSlogan pop_addAnimation:anim forKey:nil];
@@ -229,7 +229,7 @@
 // 让6个动画执行完消失
 - (void)btnViewDisappearWithPop:(void (^)())complete_block {
     // 禁止互交
-    self.view.userInteractionEnabled = NO;
+//    self.view.userInteractionEnabled = NO;
     
     NSInteger totalCount = self.fiveBtnArray.count;
     for (int i = 0; i < totalCount; i++) {

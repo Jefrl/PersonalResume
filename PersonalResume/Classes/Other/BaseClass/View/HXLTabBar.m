@@ -1,6 +1,6 @@
 //
 //  HXLTabBar.m
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 17/3/3.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -22,6 +22,12 @@
 #pragma mark ===================== 初始化 =====================
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        self.selectedImageTintColor = RED_COLOR;
+#pragma clang diagnostic pop
+        
         // 创建发布按钮
         UIButton *releaseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         
@@ -30,9 +36,6 @@
         [releaseBtn addTarget:self action:@selector(releaseBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:releaseBtn];
         self.releaseBtn = releaseBtn;
-        
-        // 注册观察者
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(releaseBtnClick:) name:LaunchingAPPNotification object:nil];
     }
     return self;
 }
@@ -89,9 +92,8 @@
     HXLNavigationController *nav = [[HXLNavigationController alloc] initWithRootViewController:releaseVC];
     
     UITabBarController *rootVC = (UITabBarController *)KEYWINDOW.rootViewController;
-    [rootVC.selectedViewController presentViewController:nav animated:NO completion:^{
-        nav.navigationBar.hidden = YES;
-    }];
+//    [nav setNavigationBarHidden:YES animated:YES];
+    [rootVC.selectedViewController presentViewController:nav animated:NO completion:nil];
 }
 
 // tabBar 上的非自定义按钮发通知

@@ -1,6 +1,6 @@
 //
 //  NSString+HXL.m
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 2017/7/18.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

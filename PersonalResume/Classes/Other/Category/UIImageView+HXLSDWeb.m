@@ -1,6 +1,6 @@
 //
 //  UIImageView+HXLSDWeb.m
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 17/3/23.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

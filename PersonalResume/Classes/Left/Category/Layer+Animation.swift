@@ -1,6 +1,6 @@
 //
 //  Layer+Animation.swift
-//  QQMusicDemo
+//  CustomClass
 //
 //  Created by Jefrl on 17/5/22.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

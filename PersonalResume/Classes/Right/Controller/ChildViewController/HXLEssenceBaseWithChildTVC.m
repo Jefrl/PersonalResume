@@ -1,13 +1,13 @@
 //
 //  HXLEssenceBaseWithChildTVC.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 17/3/17.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
 //
 
 #import "HXLEssenceBaseWithChildTVC.h"
-#import "HXLEssenceViewController.h"
+#import "HXLEssenceVC.h"
 
 #import "HXLPunTableVC.h"
 #import "HXLCommentViewController.h"
@@ -63,7 +63,7 @@
 #pragma mark - Lazy load
 - (NSString *)essenceOrLastestA
 {
-    _essenceOrLastestA = [self.parentViewController isMemberOfClass:[HXLEssenceViewController class]] ? @"list" : @"newlist";
+    _essenceOrLastestA = [self.parentViewController isMemberOfClass:[HXLEssenceVC class]] ? @"list" : @"newlist";
     
     return _essenceOrLastestA;
 }
@@ -146,7 +146,7 @@
     self.view.height += self.view.y;
     self.view.y = 0;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(NAVIGATIONBAR_HEIGHT + HeadlineView_height, 0, TABBAR_HEIGHT, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(navigationBarHgiht + HeadlineView_height, 0, tabBarHeight, 0);
     // scrollIndicatorInsets 的设置;
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     // 取消分割线
@@ -157,7 +157,7 @@
     
     self.tableView.estimatedRowHeight = 44;
     // 注册 xib
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HXLPunTableViewCell class]) bundle:nil] forCellReuseIdentifier:pun_reuseID];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HXLPunTableViewCell class]) bundle:nil] forCellReuseIdentifier:punReuseID];
 }
 
 #pragma mark - 设置上拉刷新, 下拉加载
@@ -193,7 +193,7 @@
     self.params = params;
     
     // 请求发出
-    [self.sessionManager request:RequestTypeGet URLString:HXLPUBLIC_URL parameters:params success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    [self.sessionManager request:RequestTypeGet URLString:publicUrl parameters:params success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
        
         WriteToPlist(responseObject, @"pun", @(self.type))
         
@@ -258,7 +258,7 @@
     self.params = params;
     
     // 请求发出
-    [self.sessionManager request:RequestTypeGet URLString:HXLPUBLIC_URL parameters:params success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    [self.sessionManager request:RequestTypeGet URLString:publicUrl parameters:params success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         WriteToPlist(responseObject, @"pun", @(self.type))
         self.maxtime =  responseObject[@"info"][@"maxtime"];
         
@@ -294,7 +294,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HXLPunTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:pun_reuseID forIndexPath:indexPath];
+    HXLPunTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:punReuseID forIndexPath:indexPath];
     
     HXLEssenceItem *item = self.itemArrayM[indexPath.row];
     cell.punCellItem = item;

@@ -1,6 +1,6 @@
 //
 //  HXLTabBar.h
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 17/3/3.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  HXLRecommendTagTableViewController.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/7/20.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -9,6 +9,7 @@
 #import "HXLRecommendTagTableViewController.h"
 #import "HXLRecommentTagTableViewCell.h"
 #import "HXLRecommentTagItem.h"
+#import "HXLSessionManager.h"
 
 #import "SVProgressHUD.h"
 #import "MJRefresh.h"
@@ -68,8 +69,8 @@
     // 行高与滚动
     self.tableView.rowHeight = 80;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tableView.contentInset = UIEdgeInsetsMake(NAVIGATIONBAR_HEIGHT, 0, 0, 0);
-    self.tableView.contentInset = UIEdgeInsetsMake(NAVIGATIONBAR_HEIGHT, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(navigationBarHgiht, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(navigationBarHgiht, 0, 0, 0);
     // 背景颜色与分割线
     self.tableView.backgroundColor = GRAY_PUBLIC_COLOR;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -102,7 +103,7 @@
     parameter[@"c"] = @"topic";
     self.parameter = parameter;
     
-    [self.sessionManager request:RequestTypeGet URLString:HXLPUBLIC_URL parameters:parameter success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    [self.sessionManager request:RequestTypeGet URLString:publicUrl parameters:parameter success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         WriteToPlist(responseObject, @"Recomment", @"-tag");
         
         // 不是最后一次请求, 慢网速快速切换上下刷新, 或快速切换别的 section 刷新时;

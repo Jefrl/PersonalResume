@@ -1,6 +1,6 @@
 //
 //  QQLrcTVC.swift
-//  QQMusicDemo
+//  PersonalResume
 //
 //  Created by Jefrl on 17/5/19.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -45,6 +45,8 @@ class QQLrcTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        automaticallyAdjustsScrollViewInsets = false
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor.clear

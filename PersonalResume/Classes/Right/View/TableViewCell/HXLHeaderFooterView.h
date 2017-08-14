@@ -1,6 +1,6 @@
 //
 //  HXLHeaderFooterView.h
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/7/9.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.

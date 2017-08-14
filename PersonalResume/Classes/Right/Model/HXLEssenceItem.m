@@ -1,6 +1,6 @@
 //
 //  HXLEssenceItem.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 17/3/16.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -43,20 +43,20 @@
     if (!_cellHeight) {
         
         // 1. 基础通用高度
-        CGSize text_maxSize = CGSizeMake(SCREEN_WIDTH - essenceMargin_y * 2, MAXFLOAT);
-        //        CGSize hotC_maxSize = CGSizeMake(SCREEN_WIDTH - essenceMargin_y * 4, MAXFLOAT);
+        CGSize text_maxSize = CGSizeMake(HXL_SCREEN_WIDTH - spaceTen * 2, MAXFLOAT);
+        //        CGSize hotC_maxSize = CGSizeMake(HXL_SCREEN_WIDTH - spaceTen * 4, MAXFLOAT);
         // 1.1 帖子描述文字高度
         CGFloat textHight = [self.text boundingRectWithSize:text_maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : FONT_17} context:nil].size.height;
         
         // cellHeight 的高度累加得到 midView 的 y 坐标
-        self.sumHight = containTopView_hight + textHight + essenceMargin_y;
+        self.sumHight = containTopView_hight + textHight + spaceTen;
         _cellHeight = self.sumHight;
         
         // 2. 加上点赞 View 的高度
         _cellHeight = _cellHeight + containDingView_hight;
         
         // 3. 由于后期 cell 与 contentView 的 花式变话, 那么就变化对应的整个 cell 的高度增加 15, 原本应该20的;
-        _cellHeight = _cellHeight + DIY + essenceMargin_y;
+        _cellHeight = _cellHeight + spaceFive + spaceTen;
         
         // 4. 有最热评时的高度
         
@@ -68,20 +68,20 @@
         
         if (self.type != HXLTopicTypeWord) { // 如果非文字类型
             CGFloat tmpH;
-            tmpH = imageH * small_SCREEN_WIDTH  / imageW;
+            tmpH = imageH * (HXL_SCREEN_WIDTH - 20)  / imageW;
             
-            if (imageW > SCREEN_WIDTH) {
-                tmpH = imageH * small_SCREEN_WIDTH / imageW;
+            if (imageW > HXL_SCREEN_WIDTH) {
+                tmpH = imageH * (HXL_SCREEN_WIDTH - 20) / imageW;
                 
-                if (tmpH > SCREEN_HEIGHT * 0.8) {
+                if (tmpH > HXL_SCREEN_HEIGHT * 0.8) {
                     self.isBigPicture = YES;
                     
-                    tmpH = SCREEN_HEIGHT * 0.8;
+                    tmpH = HXL_SCREEN_HEIGHT * 0.8;
                 }
                 
             }
             
-            _pictureFrame = CGRectMake(0, self.sumHight, small_SCREEN_WIDTH, tmpH);
+            _pictureFrame = CGRectMake(0, self.sumHight, (HXL_SCREEN_WIDTH - 20), tmpH);
             
             _cellHeight = _cellHeight + tmpH;
             
@@ -91,7 +91,7 @@
             
         } else { // 段子
             // 只有段子类型, 与点赞 View 无间距, 减掉空隙, 单独返回高度;
-            _cellHeight = _cellHeight - essenceMargin_y;
+            _cellHeight = _cellHeight - spaceTen;
             
             return _cellHeight;
         }

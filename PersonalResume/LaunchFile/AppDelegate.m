@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HXLTabBarController.h"
+#import "HXLPushGuideView.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,7 @@
     [self.window makeKeyAndVisible];
     self.window.backgroundColor = RED_COLOR;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:LaunchingAPPNotification object:nil userInfo:nil];
+    [HXLPushGuideView show];
     
     return YES;
 }

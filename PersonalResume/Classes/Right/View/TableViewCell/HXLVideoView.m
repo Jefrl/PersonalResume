@@ -1,6 +1,6 @@
 //
 //  HXLVideoTableViewCell.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 17/3/13.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -10,6 +10,7 @@
 #import "HXLEssenceItem.h"
 #import "HXLProgressView.h"
 #import "UIImageView+WebCache.h"
+#import "NSString+HXL.h"
 
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HXLMusicViewController">
+            <connections>
+                <outlet property="enterBtn" destination="U2v-vz-xsm" id="t50-aA-dSy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="g4n-in-Fyg">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2v-vz-xsm">
+                    <rect key="frame" x="80.5" y="313.5" width="214.5" height="40"/>
+                    <color key="backgroundColor" red="0.80392156862745101" green="0.80392156862745101" blue="0.80392156862745101" alpha="0.80136986301369861" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FH9-rQ-fOd"/>
+                    </constraints>
+                    <state key="normal" title="进入音乐">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" title="进入中...."/>
+                    <connections>
+                        <action selector="enterBtnClick:" destination="-1" eventType="touchUpInside" id="EBY-iC-ltt"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="U2v-vz-xsm" secondAttribute="trailing" constant="80" id="070-PW-fQ8"/>
+                <constraint firstItem="g4n-in-Fyg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3gF-Rl-Sxb"/>
+                <constraint firstAttribute="trailing" secondItem="g4n-in-Fyg" secondAttribute="trailing" id="7rP-yT-ULh"/>
+                <constraint firstItem="U2v-vz-xsm" firstAttribute="centerY" secondItem="g4n-in-Fyg" secondAttribute="centerY" id="CoD-Np-zAu"/>
+                <constraint firstItem="g4n-in-Fyg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PcR-Ju-6dP"/>
+                <constraint firstAttribute="bottom" secondItem="g4n-in-Fyg" secondAttribute="bottom" id="WQz-jl-AAj"/>
+                <constraint firstItem="U2v-vz-xsm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="iRa-3x-ozm"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="cat" width="1080" height="1920"/>
+    </resources>
+</document>

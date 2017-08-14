@@ -1,6 +1,6 @@
 //
 //  QQMusicOperationTool.swift
-//  QQMusicDemo
+//  PersonalResume
 //
 //  Created by Jefrl on 17/5/19.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -17,7 +17,7 @@ class QQMusicOperationTool: NSObject {
     static let shareInstance = QQMusicOperationTool()
     
     // 创建 QQ 音乐播放工具对象
-    fileprivate let tool: QQMusicTool = QQMusicTool()
+    let tool: QQMusicTool = QQMusicTool()
     
     // 定义属性接收传值
     var musicMList: [QQMusicModel]?

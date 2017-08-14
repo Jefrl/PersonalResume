@@ -10,5 +10,6 @@
 
 @interface HXLContentTool : NSObject
 + (NSArray *)getResumeArrayWithFile:(NSString *)fileName;
++ (NSArray *)getResumeArrayWithPlist:(NSString *)fileName;
 
 @end

@@ -1,6 +1,6 @@
 //
 //  HXLCommentTableViewCell.m
-//  BaiSiBuDeJie
+//  PersonalResumeBuDeJie
 //
 //  Created by Jefrl on 2017/7/8.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -42,7 +42,7 @@
 }
 - (IBAction)voiceBtnClick:(UIButton *)sender {
     NSLog(@"");
-//    UIWebView *web = [[UIWebView alloc] initWithFrame:SCREEN_BOUNDS];
+//    UIWebView *web = [[UIWebView alloc] initWithFrame:HXL_SCREEN_BOUNDS];
 //    [web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.commentItem.voiceuri]]];
 //    [KEYWINDOW addSubview:web];
     

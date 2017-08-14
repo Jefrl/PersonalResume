@@ -1,6 +1,6 @@
 //
 //  HXLNavigationController.m
-//  BaiSiBuDeJie
+//  CustomClass
 //
 //  Created by Jefrl on 17/2/28.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "HXLNavigationController.h"
 #import "UIBarButtonItem+HXLBarBtnItem.h"
-// #import "HXLFollowFriendTrendsVC.h"
+
 
 @interface HXLNavigationController () <UIGestureRecognizerDelegate>
 /** backgroundImage */
@@ -60,23 +60,6 @@
 // 给 navigation控制器上的 View 配置一个全屏侧滑
 - (void)setupFullscreenBack
 {
-    /*
-     NSLog(@"%@", self.interactivePopGestureRecognizer);
-     NSLog(@"%@", self.interactivePopGestureRecognizer.delegate);
-     Log: <
-     UIScreenEdgePanGestureRecognizer: 0x7febe4d17250; state = Possible;
-     delaysTouchesBegan = YES; view = <UILayoutContainerView 0x7febe4d12e30
-     >;
-     target= <
-     (action=handleNavigationTransition:,
-     target=<_UINavigationInteractiveTransition 0x7fd963c02b10)>
-     >
-     
-     Log: <_UINavigationInteractiveTransition: 0x7fd963c02b10> */ // 相同地址(0x7fd963c02b10), 也就证实了, self.interactivePopGestureRecognizer.delegate =就是= target
-    
-    // 2.自己写一个手势 全屏滑动移除控制器
-    // action: handleNavigationTransition:
-    // traget: self.interactivePopGestureRecognizer.delegate
     // 禁用系统的手势
     self.interactivePopGestureRecognizer.enabled = NO;
     
@@ -126,25 +109,3 @@
 
 @end
 
-/** 做的一些测试代码
- <UINavigationControllerDelegate>
- self.delegate = self;
- 
-// pop 出栈顶的操作
-- (UIViewController *)popViewControllerAnimated:(BOOL)animated
-{
-    NSLog(@"%@", self.topViewController);
-    NSLog(@"%@", self.visibleViewController);
-    return [super popViewControllerAnimated:animated];;
-}
-
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    NSLog(@"%@", viewController);
-    
-    if ([viewController isKindOfClass:[HXLFollowFriendTrendsVC class]]) {
-        [viewController.navigationController.navigationBar setBackgroundImage:_backgroundImage forBarMetrics:UIBarMetricsDefault];
-        
-    }
-}
- */

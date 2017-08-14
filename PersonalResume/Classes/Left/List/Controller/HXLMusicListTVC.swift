@@ -33,6 +33,11 @@ class HXLMusicListTVC: UITableViewController {
         
     }
     
+    deinit {
+        let tool = QQMusicOperationTool.shareInstance.tool
+        tool.stopCurrentMusic()
+    }
+    
 }
 
 extension HXLMusicListTVC {
@@ -43,9 +48,12 @@ extension HXLMusicListTVC {
     
     /// 界面初始化
     func setUpInit() {
-        navigationController?.isNavigationBarHidden = true
-        
         setTabView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     /// tableView 界面的初始化
@@ -101,10 +109,6 @@ extension HXLMusicListTVC {
         navigationController?.pushViewController(DetailVC, animated: true)
     }
     
-    func test() -> () { // 测试混编, 忽略我
-        let p = HXLPersonalResumeVC()
-        _ = p.name
-    }
-    
+
 }
 

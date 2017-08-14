@@ -19,4 +19,14 @@
     
     return contents;
 }
+
++ (NSArray *)getResumeArrayWithPlist:(NSString *)fileName
+{
+    NSString *contentPath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+    NSArray *contents = [NSArray arrayWithContentsOfFile:contentPath];
+    NSLog(@"count: %ld, \n %@", contents.count, contents);
+    
+    return contents;
+}
+
 @end

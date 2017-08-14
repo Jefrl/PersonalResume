@@ -1,13 +1,13 @@
 //
-//  BaiSiBiDeJie-Prefix.pch
-//  BaiSiBuDeJie
+//  PersonalResumeBiDeJie-Prefix.pch
+//  CustomClass
 //
 //  Created by Jefrl on 17/2/28.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
 //
 
-#ifndef BaiSiBiDeJie_Prefix_pch
-#define BaiSiBiDeJie_Prefix_pch
+#ifndef PersonalResumeBiDeJie_Prefix_pch
+#define PersonalResumeBiDeJie_Prefix_pch
 
 // 只允许导入到 OC 相关文件
 #ifndef __ObJC__
@@ -55,7 +55,7 @@
 #define LIGHTGRAY_COLOR [UIColor lightGrayColor]
 // 整体底部衬托灰色
 #define GRAY_PUBLIC_COLOR RGBColor(233, 233, 233, 1)
-// 整体呈现灰色
+// 整体外部呈现灰色
 #define GRAY_WHITE_COLOR RGBColor(240, 240, 240, 1)
 // RGB 指定颜色与不透明度 (不透明: 1 透明: 0)
 #define RGBColor(r, g, b, a) [UIColor colorWithRed: r / 255.0 green: g / 255.0 blue: b / 255.0 alpha: a]
@@ -122,6 +122,7 @@
 #import "HXLConst.h"
 #import "UIView+HXLGeometry.h"
 
+#define TitleFont FONT_13
 
 //// 三方类
 
@@ -147,4 +148,4 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#endif /* BaiSiBiDeJie_Prefix_pch */
+#endif /* PersonalResumeBiDeJie_Prefix_pch */
