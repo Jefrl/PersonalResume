@@ -66,8 +66,8 @@
         imageView.userInteractionEnabled = YES;
         imageView.hidden = YES;
         
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTagGesture:)];
-        [imageView addGestureRecognizer:tapGesture];
+//        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageViewTagGesture:)];
+//        [imageView addGestureRecognizer:tapGesture];
         
         [KEYWINDOW addSubview:imageView];
         _imageView = imageView;

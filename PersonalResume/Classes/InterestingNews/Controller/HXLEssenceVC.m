@@ -103,7 +103,7 @@ NSString * const reuseID = @"collectionCell";
     // contentCollectionView 的创建与设置
     UICollectionView *contentCollectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:collectionViewFlowLayout];
     contentCollectionView.frame = self.view.bounds;
-    contentCollectionView.backgroundColor = BROWN_COLOR; // 调试棕色
+    contentCollectionView.backgroundColor = WHITE_COLOR; // 调颜色与界面一致
     contentCollectionView.pagingEnabled = YES;
     contentCollectionView.bounces = NO;
     // 代理与数据源
