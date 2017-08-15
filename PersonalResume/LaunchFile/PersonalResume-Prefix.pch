@@ -1,13 +1,13 @@
 //
-//  PersonalResumeBiDeJie-Prefix.pch
+//  PersonalResume-Prefix.pch
 //  CustomClass
 //
 //  Created by Jefrl on 17/2/28.
 //  Copyright © 2017年 com.Jefrl.www. All rights reserved.
 //
 
-#ifndef PersonalResumeBiDeJie_Prefix_pch
-#define PersonalResumeBiDeJie_Prefix_pch
+#ifndef PersonalResume_Prefix_pch
+#define PersonalResume_Prefix_pch
 
 // 只允许导入到 OC 相关文件
 #ifndef __ObJC__
@@ -124,28 +124,9 @@
 
 #define TitleFont FONT_13
 
-//// 三方类
-
-//#import "UIView+HXL.h"
-//#import "UIImageView+HXLSDWeb.h"
-//// 网络工具类
-//#import "HXLSessionManager.h"
-//// 分类
-//#import "UIBarButtonItem+HXLBarBtnItem.h"
-//#import "UIImage+HXLRenderOriginal.h"
-//#import "NSString+HXL.h"
-//
-//// 基类
-//#import "HXLHeadlineBtn.h"
-//#import "HXLEssenceBaseWithChildTVC.h"
-
-
-
-
-
 
 #endif
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#endif /* PersonalResumeBiDeJie_Prefix_pch */
+#endif /* PersonalResume_Prefix_pch */

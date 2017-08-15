@@ -89,31 +89,3 @@ CGFloat const heightForHeaderInSection = spaceThirtyF;
 CGFloat const containTopView_hight = spaceTen * 5;
 CGFloat const containDingView_hight = spaceForty;
 CGFloat const Underline_height = 1;
-/*
-
-CGFloat const cellMargin_y = 1;
-CGFloat const spaceTen = 10;
-CGFloat const spaceTen = 10;
-CGFloat const spaceFive = 5;
-// 用户头像 icon 的占位小图片名
-NSString *const placeholder = @"default_header_image_small";
-// 用户头像 icon 的占位大图片名
-NSString *const bigplaceholder = @"default_header_image_big";
- 
-// 评论页面 section 头部的高度
-CGFloat const heightForHeaderInSection = 25;
-// 我的页面中的 section 自动滚动距离 (这里系统滚动已经禁止, 但是依然有滚动, 通过setFrame 打印获得的值)
-CGFloat const mineSectionSroll = 35;
-// Mine 中方格总列数
-NSInteger const cols = 4;
-/
-// 个人详情页面 tableView 下滚的调整距离
-CGFloat scrollValue = 240+150;
-
-
-
-// 网络加载自定义每次加载条数
-NSInteger const loadCount = 10;
-// 规定展示的热评数目
-NSInteger const showHotCount = 3;
-*/
