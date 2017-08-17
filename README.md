@@ -17,6 +17,7 @@
 * 详见下面链接
  * [招聘 - 团队说明](http://www.jianshu.com/p/3d30031c3b94)
  * [招聘 - 编程考核](http://www.jianshu.com/p/446eb6d7a252) 
+ * [编程竞赛 - 门店层级筛选的问题](http://www.jianshu.com/p/566c416f113b)
  * [编程竞赛 - 数组父子关系的转换](http://www.jianshu.com/p/332ba25df59b)
 
 ### <span id="01"> 01. 代码简历 </span> ==[bk01](#bk01)==
