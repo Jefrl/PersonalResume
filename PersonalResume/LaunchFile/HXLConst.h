@@ -77,6 +77,8 @@ typedef NS_ENUM(NSUInteger, HXLTopicType)
 UIKIT_EXTERN NSString * const HXLTabBarDidSelectNotification;
 // 头部标题高度
 UIKIT_EXTERN CGFloat const HeadlineView_height;
+// 恢复全屏侧滑的通知字符串
+UIKIT_EXTERN NSString * const allowFullscreenBack;
 
 // 基类(也是段子)的重用标识;
 UIKIT_EXTERN NSString * const punReuseID;

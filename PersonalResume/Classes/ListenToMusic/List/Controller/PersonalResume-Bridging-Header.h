@@ -10,6 +10,7 @@
 #define PersonalResume_Bridging_Header_h
 
 #import "HXLPersonalResume.h"
+#import "HXLConst.h"
 
 
 #endif /* PersonalResume_Bridging_Header_h */

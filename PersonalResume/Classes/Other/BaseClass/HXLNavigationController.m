@@ -8,6 +8,7 @@
 
 #import "HXLNavigationController.h"
 #import "UIBarButtonItem+HXLBarBtnItem.h"
+#import "PersonalResume-Swift.h"
 
 
 @interface HXLNavigationController () <UIGestureRecognizerDelegate>
@@ -15,6 +16,8 @@
 @property (nonatomic, readwrite, strong) UIImage *backgroundImage;
 /** UINavigationBar *navgationBar */
 @property (nonatomic, readwrite, strong) UINavigationBar *navgationBar;
+/** 阀门: 禁止侧滑返回 */
+@property (nonatomic, readwrite, assign) BOOL fobidFullscreenBack;
 
 @end
 
@@ -28,6 +31,8 @@
     [self setTitleTextAttributesOfSize:FONT_17 foregroundColor:WHITE_COLOR];
     // 设置全屏侧滑
     [self setupFullscreenBack];
+    // 监听听歌界面的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allowFullscreenBack:) name:allowFullscreenBack object:nil];
 }
 
 /** 供系统的导航控制器调用, 来精准设置栈顶子控制器的状态栏 */
@@ -80,6 +85,12 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.childViewControllers.count > 0) {
+        if ([viewController isKindOfClass:[QQDetailVC class]]) {
+            // 听歌界面要禁止侧滑
+            _fobidFullscreenBack = YES;
+        }
+            
+        
         viewController.hidesBottomBarWhenPushed = YES;
         
         // 设置push 进来的非根控制器的左侧返回 item 条
@@ -95,6 +106,12 @@
     
 }
 
+#pragma mark ===================== 响应的方法区域 =====================
+- (void)allowFullscreenBack:(NSNotification *)notification
+{
+    _fobidFullscreenBack = NO; // 恢复其他界面的全屏侧滑
+}
+
 // 左侧返回按钮点击方法
 - (void)backItemClick:(UIBarButtonItem *)sender
 {
@@ -104,8 +121,11 @@
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 { // 根控制器不允许出栈, 会卡死
-    return self.viewControllers.count > 1;
+    
+    return self.viewControllers.count && _fobidFullscreenBack == NO > 1;
 }
+
+
 
 @end
 

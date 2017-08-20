@@ -8,9 +8,8 @@
 
 import UIKit
 
-
 class QQDetailVC: UIViewController, UIScrollViewDelegate {
-   
+    
     /** 歌词背景视图(动画使用) */
     @IBOutlet weak var lrcBackView: UIScrollView!
     
@@ -107,10 +106,18 @@ extension QQDetailVC {
     @IBAction func back(_ sender: AnyObject) {
         
         _ = navigationController?.popViewController(animated: true)
+        
+        // 发送通知, 允许全屏侧滑
+        let center = NotificationCenter.default
+        center.post(name: NSNotification.Name(rawValue:"allowFullscreenBack"), object: nil, userInfo: nil)
+        
     }
 
     @IBAction func close() {
         _ = navigationController?.popViewController(animated: true)
+        
+        let center = NotificationCenter.default
+        center.post(name: NSNotification.Name(rawValue:"allowFullscreenBack"), object: nil, userInfo: nil)
     }
 
     // 播放或者暂停

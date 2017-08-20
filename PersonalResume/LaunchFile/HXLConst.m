@@ -58,9 +58,10 @@ NSString * const otherDot = @"other";
 // 右侧数据
 // tabBar被选中的通知名字
 NSString * const HXLTabBarDidSelectNotification = @"HXLTabBarDidSelectNotification";
+// 头部标题高度
 CGFloat const HeadlineView_height = spaceThirty;
-
-
+// 恢复全屏侧滑的通知字符串
+NSString * const allowFullscreenBack = @"allowFullscreenBack";
 
 // 基类(也是段子)的重用标识;
 NSString * const punReuseID = @"punReuseID";
