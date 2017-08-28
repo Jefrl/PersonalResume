@@ -18,7 +18,8 @@
 
 * 动图与截图如下
   
-![14](images/00.gif) 
+![14](images/00.gif) </br>
+ 
 <img src="images/01.png" width = "375" height = "677" alt="01" align=center />
 
 <img src="images/02.png" width = "375" height = "677" alt="01" align=center />
