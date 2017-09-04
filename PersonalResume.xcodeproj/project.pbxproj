@@ -716,8 +716,8 @@
 			isa = PBXGroup;
 			children = (
 				A5805E8D1F42ABE000A87929 /* Category */,
-				A5805E901F42ABE000A87929 /* Detail */,
 				A5805E9C1F42ABE000A87929 /* List */,
+				A5805E901F42ABE000A87929 /* Detail */,
 				A5805EA91F42ABE000A87929 /* MusicResources */,
 				A5805EE71F42ABE000A87929 /* Tool */,
 			);
