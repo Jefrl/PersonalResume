@@ -128,15 +128,15 @@
 
 - (void)setupBase
 {
+    
     // 右侧导航 item
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemImage:[UIImage imageNamed:@"comment_nav_item_share_icon"] selectedImage:[UIImage imageNamed:@"comment_nav_item_share_icon_click"] addTarget:self action:@selector(rightBarButtonItemClick:) contentEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -spaceFive) forControlEvents:UIControlEventTouchUpInside forcontrolState:UIControlStateHighlighted];
     
     self.title = @"评论";
     self.tableView.estimatedRowHeight = 44;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    // 系统滚动内边距调整
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tableView.contentInset = UIEdgeInsetsMake(navigationBarHgiht, 0, tabBarHeight, 0);
+    // 系统滚动内边距调整, 此处苹果系统 API 的改变, 导致 section 的头部高度会在滚动时往下再挪 10 我擦, 这个 bug, 哎??
+    self.tableView.contentInset = UIEdgeInsetsMake(spaceTen, 0, tabBarHeight, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     // 去掉 多余 cell 中的分割线
     self.tableView.tableFooterView = [[UIView alloc] init];

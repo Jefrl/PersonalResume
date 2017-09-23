@@ -114,6 +114,7 @@ NSString * const reuseID = @"collectionCell";
     
     [self.view addSubview:contentCollectionView];
     _contentCollectionView = contentCollectionView;
+    
 }
 
 /** 代理与数据源方法 */

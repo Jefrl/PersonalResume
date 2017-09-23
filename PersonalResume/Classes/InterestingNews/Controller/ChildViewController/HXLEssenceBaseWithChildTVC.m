@@ -21,8 +21,6 @@
 #import "UIImageView+WebCache.h"
 #import "SVProgressHUD.h"
 
-
-
 @interface HXLEssenceBaseWithChildTVC ()
 
 /** HXLSessionManager 对象 */
@@ -143,10 +141,11 @@
     
     self.tableView.backgroundColor = RGBColor(255, 255, 255, 1);
     // 由于滚动的原因, tableView 系统默认低于状态栏, 高度也减了状态栏的高度;
-    self.view.height += self.view.y;
-    self.view.y = 0;
+//    self.view.height += self.view.y;
+//    self.view.y = 0;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(navigationBarHgiht + HeadlineView_height, 0, tabBarHeight, 0);
+    //    self.automaticallyAdjustsScrollViewInsets = NO; // 由于 collectionView 的原因子控件依然会随着下降 64;
+    self.tableView.contentInset = UIEdgeInsetsMake(HeadlineView_height, 0, tabBarHeight, 0);
     // scrollIndicatorInsets 的设置;
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     // 取消分割线
